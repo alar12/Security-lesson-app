@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import { ThemeProvider, createTheme } from '@mui/material/styles'; // Import ThemeProvider and createTheme
+import { motion } from 'framer-motion';
+import { Typography, IconButton, Paper } from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Header from './components/Header';
 import Home from './components/Home';
 import Lesson from './components/Lesson';
@@ -7,6 +12,13 @@ import Results from './components/Results';
 import Popup from './components/Popup';
 import IncompleteQuizPopup from './components/IncompleteQuizPopup';
 import lessons from './lessons';
+
+// Define your theme
+const theme = createTheme({
+  // Customize your theme here
+  spacing: 8, // Example spacing value
+  // Add more theme configurations as needed
+});
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -108,35 +120,37 @@ const App = () => {
   };
 
   return (
-    <div>
-      <Header onBack={handleBack} onNext={handleNext} onMain={() => setCurrentPage('home')} />
-      {currentPage === 'home' && <Home onStart={handleStart} />}
-      {currentPage === 'lesson' && (
-        <>
-          {isResults ? (
-            <Results
-              score={score}
-              totalQuestions={lessons[currentLesson].quiz.length}
-              reviewQuiz={reviewQuiz}
-              canProceed={canProceed}
-              onNextLesson={handleNext}
-              onRetry={handleRetryQuiz}
-            />
-          ) : isQuiz ? (
-            <Quiz questions={lessons[currentLesson].quiz} onComplete={handleQuizComplete} />
-          ) : (
-            <Lesson
-              title={lessons[currentLesson].title}
-              content={lessons[currentLesson].content}
-              image={lessons[currentLesson].image}
-              slides={lessons[currentLesson].slides}
-            />
-          )}
-        </>
-      )}
-      <Popup open={popupOpen} onClose={handleClosePopup} onRetry={handleRetryQuiz} />
-      <IncompleteQuizPopup open={incompleteQuizPopupOpen} onClose={handleCloseIncompleteQuizPopup} />
-    </div>
+    <ThemeProvider theme={theme}> {/* Wrap your app with ThemeProvider and pass your theme */}
+      <div>
+        <Header onBack={handleBack} onNext={handleNext} onMain={() => setCurrentPage('home')} />
+        {currentPage === 'home' && <Home onStart={handleStart} />}
+        {currentPage === 'lesson' && (
+          <>
+            {isResults ? (
+              <Results
+                score={score}
+                totalQuestions={lessons[currentLesson].quiz.length}
+                reviewQuiz={reviewQuiz}
+                canProceed={canProceed}
+                onNextLesson={handleNext}
+                onRetry={handleRetryQuiz}
+              />
+            ) : isQuiz ? (
+              <Quiz questions={lessons[currentLesson].quiz} onComplete={handleQuizComplete} />
+            ) : (
+              <Lesson
+                title={lessons[currentLesson].title}
+                content={lessons[currentLesson].content}
+                image={lessons[currentLesson].image}
+                slides={lessons[currentLesson].slides}
+              />
+            )}
+          </>
+        )}
+        <Popup open={popupOpen} onClose={handleClosePopup} onRetry={handleRetryQuiz} />
+        <IncompleteQuizPopup open={incompleteQuizPopupOpen} onClose={handleCloseIncompleteQuizPopup} />
+      </div>
+    </ThemeProvider>
   );
 };
 
