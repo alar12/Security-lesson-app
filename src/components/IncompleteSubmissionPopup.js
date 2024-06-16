@@ -7,7 +7,7 @@ const IncompleteSubmissionPopup = ({ open, onClose }) => (
     <DialogTitle>Incomplete Submission</DialogTitle>
     <DialogContent>
       <Typography variant="h6">All questions should be answered to submit.</Typography>
-      <img src={incompleteSubmissionImage} alt="Incomplete Submission" style={{ width: '50%', marginTop: 20 }} />
+      <img src="https://www.freepnglogos.com/uploads/doraemon-png/gambar-doraemon-png-nangri-13.png" alt="Incomplete Submission" style={{ width: '40%', marginTop: 20, marginLeft: 100 }} />
     </DialogContent>
     <DialogActions>
       <Button onClick={onClose} color="primary" variant="contained">

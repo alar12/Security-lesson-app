@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { ThemeProvider, createTheme } from '@mui/material/styles'; // Import ThemeProvider and createTheme
-import { motion } from 'framer-motion';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Typography, IconButton, Paper } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -12,12 +11,10 @@ import Results from './components/Results';
 import Popup from './components/Popup';
 import IncompleteQuizPopup from './components/IncompleteQuizPopup';
 import lessons from './lessons';
+import './App.css';
 
-// Define your theme
 const theme = createTheme({
-  // Customize your theme here
-  spacing: 8, // Example spacing value
-  // Add more theme configurations as needed
+  spacing: 8,
 });
 
 const App = () => {
@@ -120,8 +117,14 @@ const App = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}> {/* Wrap your app with ThemeProvider and pass your theme */}
-      <div>
+    <ThemeProvider theme={theme}>
+      <div style={{
+        backgroundImage: 'url("https://img.freepik.com/free-vector/hand-drawn-children-s-day-spanish-background_23-2149299343.jpg?t=st=1718562502~exp=1718566102~hmac=5797445f72daaa3eeedef27cf8a7919f39cad9d7a0aa68be3dca6ea2ab1959f1&w=900")',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        minHeight: '100vh'
+      }}>
         <Header onBack={handleBack} onNext={handleNext} onMain={() => setCurrentPage('home')} />
         {currentPage === 'home' && <Home onStart={handleStart} />}
         {currentPage === 'lesson' && (

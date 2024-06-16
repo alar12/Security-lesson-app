@@ -1,3 +1,27 @@
+/* App.css */
+
+/* Ensure the body and html take up the full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply the background image to the body */
+body {
+  background-image: url('https://img.freepik.com/free-vector/hand-drawn-children-s-day-spanish-background_23-2149299343.jpg?t=st=1718562502~exp=1718566102~hmac=5797445f72daaa3eeedef27cf8a7919f39cad9d7a0aa68be3dca6ea2ab1959f1&w=900');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: Arial, sans-serif; /* Add a font family if needed */
+}
+
+/* Ensure the root div takes up the full height */
+#root {
+  height: 100%;
+}
+
+/* Keep the existing App styles */
 .App {
   text-align: center;
 }

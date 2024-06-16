@@ -5,18 +5,19 @@ import { makeStyles } from '@mui/styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-// Custom background styles
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: theme.spacing(3),
     maxWidth: 800,
     margin: '0 auto',
     marginTop: theme.spacing(4),
+    padding: theme.spacing(4),
     borderRadius: theme.spacing(2),
     boxShadow: '0px 8px 12px rgba(0, 0, 0, 0.1)',
-    textAlign: 'center',
+    background: `linear-gradient(45deg, #FF5252, #FF1744, #FFD600)`,
+    backgroundImage: `radial-gradient(circle at top left, #2196F3, #F44336, #009688)`,
     position: 'relative',
     overflow: 'hidden',
+    transition: 'background-color 0.3s ease-in-out',
     '&::before': {
       content: '""',
       position: 'absolute',
@@ -38,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
       backgroundImage: `radial-gradient(circle, #4CAF50, #FF9800, #9C27B0)`,
       transform: 'rotate(-45deg)',
       zIndex: -1,
+    },
+    '&:hover': {
+      backgroundColor: '#f0f0f0',
     },
   },
   title: {
