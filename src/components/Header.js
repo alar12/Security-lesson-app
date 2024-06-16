@@ -47,9 +47,9 @@ const Header = ({ onBack, onNext, onMain }) => {
   return (
     <AppBar position="static" className={classes.appBar}>
       <Toolbar className={classes.toolbar}>
-        <Button className={classes.button} onClick={onMain}>
+        <IconButton className={classes.button} onClick={onMain}>
           Main
-        </Button>
+        </IconButton>
         <IconButton className={classes.iconButton} onClick={onBack}>
           <ArrowBackIcon />
           Back
