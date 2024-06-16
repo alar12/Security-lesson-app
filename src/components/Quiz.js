@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Button, FormControl, FormControlLabel, Radio, RadioGroup, Typography, Paper, Grid } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import { motion } from 'framer-motion'; // Import motion from framer-motion for animations
-import IncompleteSubmissionPopup from './IncompleteSubmissionPopup'; // Import the new popup component
+import { motion } from 'framer-motion'; 
+import IncompleteSubmissionPopup from './IncompleteSubmissionPopup'; 
 
 const useStyles = makeStyles((theme) => ({
   root: {
