@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Typography, Paper } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
+//displays the results after the completion
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 800,

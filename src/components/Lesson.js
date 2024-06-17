@@ -5,6 +5,7 @@ import { makeStyles } from '@mui/styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
+//Lessons rendering from the json file which i gave in lessons.js
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 800,

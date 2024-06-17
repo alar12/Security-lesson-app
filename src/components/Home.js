@@ -63,6 +63,7 @@ const AnimatedText = styled('span')({
   },
 });
 
+//home section welcome page
 const Home = ({ onStart }) => (
   <StyledContainer>
     <Title variant="h1">

@@ -2,6 +2,7 @@ import React from 'react';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Typography } from '@mui/material';
 import retry from '../images/retry.png';
 
+//popup for Try Again - Quiz
 const Popup = ({ open, onClose, onRetry }) => (
   <Dialog open={open} onClose={onClose}>
     <DialogTitle>Try Again</DialogTitle>

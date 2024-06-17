@@ -4,6 +4,7 @@ import { makeStyles } from '@mui/styles';
 import { motion } from 'framer-motion'; 
 import IncompleteSubmissionPopup from './IncompleteSubmissionPopup'; 
 
+//Quiz page renders quiz section from lessons.js file
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 800,
